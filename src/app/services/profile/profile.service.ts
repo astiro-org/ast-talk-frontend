@@ -27,11 +27,19 @@ export class ProfileService {
     return this.http.get<Profile>(`${this.baseApiUrl}/account/${id}`);
   }
 
-  getSubscribersShortList() {
-    return this.http
-      .get<Pageble<Profile>>(`${this.baseApiUrl}/account/subscribers/`)
-      // 0 item - это тест юзер
-      .pipe(map((res) => res.items.slice(1, 4)));
+  getSubscribersShortList(count = 3) {
+    return (
+      this.http
+        .get<Pageble<Profile>>(`${this.baseApiUrl}/account/subscribers/`)
+        // 0 item - это тест юзер
+        .pipe(
+          map((res) =>
+            res.items
+              .filter((user) => user.username !== 'test_user_ws')
+              .slice(0, count)
+          )
+        )
+    );
   }
 
   patchProfile(profile: Partial<Profile>) {

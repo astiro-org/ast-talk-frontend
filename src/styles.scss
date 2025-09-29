@@ -1,5 +1,14 @@
-@import "fonts.scss";
-@import "margins.scss";
+@use "sass:color";
+@use "fonts.scss";
+@use "margins.scss";
+
+@function lighten-color($color, $amount) {
+  @return color.adjust($color, $lightness: $amount);
+}
+
+@function darken-color($color, $amount) {
+  @return color.adjust($color, $lightness: -$amount);
+}
 
 :root {
   --light-color: #f0f0f0;
@@ -51,12 +60,12 @@ button {
 }
 
 .btn:hover {
-  background: darken(#009b95, 5%);
+  background: darken-color(#009b95, 5%);
   cursor: pointer;
 }
 
 .btn:disabled {
-  background: lighten(#009b95, 5%);
+  background: lighten-color(#009b95, 5%);
   cursor: not-allowed;
 }
 
@@ -66,6 +75,12 @@ button {
   line-height: 1.125;
 }
 
+.font--h4 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 2;
+}
+
 .font--h6 {
   font-size: 1.125rem;
   font-weight: 800;
@@ -73,6 +88,12 @@ button {
 }
 
 .font--subtitle {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.font--regular {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25;

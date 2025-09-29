@@ -14,11 +14,7 @@
   <p class="profile-card__description font--medium">
     {{ profile.description }}
   </p>
-  <div class="profile-card__tags">
-    @for(skill of profile.stack; track skill) {
-    <div class="skill-tag">{{ skill }}</div>
-    }
-  </div>
+  <app-profile-skills [skills]="profile.stack"></app-profile-skills>
   <div class="profile-card__actions">
     <button class="btn">Подписаться</button>
   </div>

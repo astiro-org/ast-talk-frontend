@@ -1,0 +1,97 @@
+.profile-page {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__edit-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--dark-solid-color);
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--light-color);
+      border-radius: 2px;
+    }
+
+    &:hover,
+    &:focus-visible > &__settings-icon {
+      color: var(--light-color);
+    }
+  }
+
+  &__settings-icon {
+    width: 14px;
+    height: 14px;
+    transition: all 0.2s ease-in;
+  }
+
+  &__body {
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 64px;
+  }
+}
+
+.subscribers__list {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.subscriber {
+  width: 36px;
+  height: 36px;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+
+  &__img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &-search {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--light-color);
+    transition: all 0.2s ease-in;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--primary-color);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background: var(--dark-color);
+      border-radius: 2px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      width: 2px;
+      height: 12px;
+    }
+
+    &::after {
+      width: 12px;
+      height: 2px;
+    }
+  }
+}

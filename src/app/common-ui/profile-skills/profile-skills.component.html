@@ -1,0 +1,7 @@
+@if (skills(); as skills) {
+<div class="profile-card__tags">
+  @for(skill of skills; track skill) {
+  <div class="skill-tag">{{ skill }}</div>
+  }
+</div>
+}
