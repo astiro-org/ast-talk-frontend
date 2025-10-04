@@ -1,0 +1,40 @@
+:host {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: 322px 1fr;
+}
+
+.profile-form-wrapper {
+  padding: 32px;
+  min-height: calc(100dvh - (24px * 2));
+  background: var(--dark-color);
+  border: 1px solid var(--light-color);
+}
+
+.profile-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &--two-columns {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+
+    & > .at-label {
+      flex: 1 1 auto;
+    }
+  }
+}

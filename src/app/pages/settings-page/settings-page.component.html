@@ -1,0 +1,62 @@
+<div></div>
+
+<div class="profile-form-wrapper">
+  <form class="profile-form" [formGroup]="form">
+    <div class="profile-form__fields">
+      <div class="profile-form--two-columns">
+        <label class="at-label">
+          <p class="at-label__title at-label__title--secondary">Имя</p>
+          <input
+            class="at-input at-input--secondary"
+            formControlName="firstName"
+            type="text"
+            placeholder="Введите данные"
+          />
+        </label>
+        <label class="at-label">
+          <p class="at-label__title at-label__title--secondary">Фамилия</p>
+          <input
+            class="at-input at-input--secondary"
+            formControlName="lastName"
+            type="text"
+            placeholder="Введите данные"
+          />
+        </label>
+      </div>
+      <label class="at-label">
+        <p class="at-label__title at-label__title--secondary">
+          Telegram username
+        </p>
+        <input
+          class="at-input at-input--secondary"
+          formControlName="username"
+          type="text"
+          placeholder="Введите данные"
+        />
+      </label>
+      <label class="at-label">
+        <p class="at-label__title at-label__title--secondary">О себе</p>
+        <textarea
+          class="at-textarea at-textarea--secondary"
+          formControlName="description"
+          type="text"
+          placeholder="Введите данные"
+        ></textarea>
+      </label>
+      <label class="at-label">
+        <p class="at-label__title at-label__title--secondary">Навыки</p>
+        <input
+          class="at-input at-input--secondary"
+          formControlName="stack"
+          type="text"
+          placeholder="Введите данные"
+        />
+      </label>
+    </div>
+    <div class="profile-form__actions">
+      <div>
+        <button class="btn" (click)="onSave()">Сохранить</button>
+      </div>
+    </div>
+  </form>
+</div>

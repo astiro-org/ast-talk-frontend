@@ -31,7 +31,7 @@ export class ProfileService {
     return (
       this.http
         .get<Pageble<Profile>>(`${this.baseApiUrl}/account/subscribers/`)
-        // 0 item - это тест юзер
+        // убираем test_user_ws (раньше был элементом с 0 индексом)
         .pipe(
           map((res) =>
             res.items
@@ -43,6 +43,8 @@ export class ProfileService {
   }
 
   patchProfile(profile: Partial<Profile>) {
+    console.log(profile);
+
     return this.http.patch<Profile>(`${this.baseApiUrl}/account/me`, profile);
   }
 

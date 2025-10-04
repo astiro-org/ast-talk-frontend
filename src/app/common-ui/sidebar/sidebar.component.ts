@@ -27,7 +27,7 @@ export class SidebarComponent {
   me = this.profileService.me;
 
   menuItems = [
-    { icon: 'home', label: 'Моя страница', link: '' },
+    { icon: 'home', label: 'Моя страница', link: 'profile/me' },
     { icon: 'chat', label: 'Чаты', link: 'chats' },
     { icon: 'search', label: 'Поиск', link: 'search' },
   ];

@@ -4,6 +4,18 @@
   background: var(--dark-solid-color);
 }
 
+.logo-link {
+  display: inline-block;
+  height: 74px;
+  width: auto;
+  text-decoration: none;
+
+  &__img {
+    height: 100%;
+    width: auto;
+  }
+}
+
 .menu-list {
   padding: 0;
   display: grid;
