@@ -12,6 +12,7 @@ export class ProfileService {
   baseApiUrl = 'https://icherniakov.ru/yt-course';
 
   me = signal<Profile | null>(null);
+  filteredProfiles = signal<Profile[]>([]);
 
   getTestsAccounts() {
     return this.http.get<Profile[]>(`${this.baseApiUrl}/account/test_accounts`);
@@ -36,8 +37,8 @@ export class ProfileService {
           map((res) =>
             res.items
               .filter((user) => user.username !== 'test_user_ws')
-              .slice(0, count)
-          )
+              .slice(0, count),
+          ),
         )
     );
   }
@@ -51,6 +52,17 @@ export class ProfileService {
   uploadAvatar(file: File) {
     const formData = new FormData();
     formData.append('image', file);
-    return this.http.post(`${this.baseApiUrl}/account/upload_image`, formData);
+    return this.http.post<Profile>(
+      `${this.baseApiUrl}/account/upload_image`,
+      formData,
+    );
+  }
+
+  filterProfiles(params: Record<string, any>) {
+    return this.http
+      .get<Pageble<Profile>>(`${this.baseApiUrl}/account/accounts`, {
+        params,
+      })
+      .pipe(tap((res) => this.filteredProfiles.set(res.items)));
   }
 }

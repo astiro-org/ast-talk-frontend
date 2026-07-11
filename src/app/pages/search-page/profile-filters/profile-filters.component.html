@@ -1,0 +1,28 @@
+<form class="profile-search-form" [formGroup]="searchForm">
+  <label class="at-label">
+    <span class="at-label__title at-label__title--secondary">Имя</span>
+    <input
+      type="text"
+      class="at-input at-input--secondary"
+      formControlName="firstName"
+    />
+  </label>
+
+  <label class="at-label">
+    <span class="at-label__title at-label__title--secondary">Фамилия</span>
+    <input
+      type="text"
+      class="at-input at-input--secondary"
+      formControlName="lastName"
+    />
+  </label>
+
+  <label class="at-label">
+    <span class="at-label__title at-label__title--secondary">Навыки</span>
+    <input
+      type="text"
+      class="at-input at-input--secondary"
+      formControlName="stack"
+    />
+  </label>
+</form>
