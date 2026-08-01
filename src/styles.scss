@@ -71,6 +71,18 @@ button {
   cursor: not-allowed;
 }
 
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  border-radius: 2px;
+}
+
 .font--h1 {
   font-size: 3rem;
   font-weight: 800;

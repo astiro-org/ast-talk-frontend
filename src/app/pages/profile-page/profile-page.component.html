@@ -1,13 +1,14 @@
 @if (profile$ | async; as profile) {
 <header class="profile-page__header">
-  <app-profile-header [profile]="profile"></app-profile-header>
+  <app-profile-header [profile]="profile" />
   <a class="btn profile-page__edit-link" [routerLink]="['/settings']">
     Редактировать
     <svg icon="settings" class="profile-page__settings-icon"></svg>
   </a>
 </header>
+
 <main class="profile-page__body">
-  <app-post-feed></app-post-feed>
+  <app-post-feed />
 
   <div class="subscribers">
     <h6 class="font--h6 mb--16">Подписчики</h6>
@@ -22,7 +23,7 @@
 
     <h6 class="font--h6 mb--16">Навыки</h6>
     <div class="mb--32">
-      <app-profile-skills [skills]="profile.stack"></app-profile-skills>
+      <app-profile-skills [skills]="profile.stack" />
     </div>
 
     <h6 class="font--h6 mb--16">О себе</h6>
