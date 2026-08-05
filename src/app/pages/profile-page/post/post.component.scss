@@ -1,0 +1,50 @@
+@use "sass:color";
+
+:host {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  grid-gap: 16px;
+  background: var(--dark-color);
+  border: 1px solid var(--light-color);
+}
+
+.article {
+  display: grid;
+  grid-gap: 12px;
+
+  &__author {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px;
+    color: var(--light-color);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__action {
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--primary-color);
+    background: none;
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s ease-in;
+
+    &:hover {
+      border-color: color.adjust(#009b95, $lightness: -5%);
+      color: color.adjust(#009b95, $lightness: -5%);
+      cursor: pointer;
+    }
+  }
+}
+
+.comment-icon {
+  width: 15px;
+  height: 14px;
+}

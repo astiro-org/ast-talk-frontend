@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core';
-import { Profile } from '../../types/profile.interface';
 import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
 
 @Component({
@@ -9,5 +8,5 @@ import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
   styleUrl: './avatar-circle.component.scss',
 })
 export class AvatarCircleComponent {
-  profile = input<Profile>();
+  avatarUrl = input<string | null>();
 }

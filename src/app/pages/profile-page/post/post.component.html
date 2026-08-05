@@ -1,1 +1,23 @@
-<p>post works!</p>
+@if (post(); as post) {
+  <div>
+    <app-avatar-circle class="size-32" [avatarUrl]="post.author.avatarUrl" />
+  </div>
+
+  <article class="article">
+    <div class="article__header">
+      <strong class="article__author">
+        {{ post.author.firstName }} {{ post.author.lastName }}
+      </strong>
+      <span>{{ post.createdAt | date: "HH:mm dd.MM.YYYY" }}</span>
+    </div>
+
+    <p class="font--medium">{{ post.content }}</p>
+
+    <div class="article__actions">
+      <button class="article__action">
+        <svg icon="comment" class="comment-icon"></svg>
+        <span>{{ post.comments.length }}</span>
+      </button>
+    </div>
+  </article>
+}
